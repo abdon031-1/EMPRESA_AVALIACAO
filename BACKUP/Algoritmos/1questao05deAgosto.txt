@@ -1,0 +1,88 @@
+Integrantes: Miguel Abdon, Miguel Jussek, Theo
+
+<script>
+let situacoes = [
+    "1. Você vê um colega fazendo comentários ofensivos sobre uma menina da escola.\n\nA) Rir junto.\nB) Pedir respeito e informar um responsável.\nC) Gravar e postar na internet.",
+
+    "2. Uma amiga conta que está sofrendo ameaças.\n\nA) Ignorar.\nB) Dizer que é brincadeira.\nC) Ouvir, apoiar e orientar a procurar ajuda.",
+
+    "3. Em um grupo de mensagens alguém compartilha uma foto íntima sem autorização.\n\nA) Compartilhar também.\nB) Apagar, denunciar e não divulgar.\nC) Fazer piadas.",
+
+    "4. Durante uma discussão, uma pessoa começa a gritar e humilhar outra.\n\nA) Incentivar a discussão.\nB) Achar normal.\nC) Tentar acalmar a situação e buscar ajuda.",
+
+    "5. Uma campanha escolar fala sobre respeito às mulheres.\n\nA) Participar e aprender.\nB) Ignorar.\nC) Atrapalhar a atividade.",
+
+    "6. Você presencia um caso de assédio.\n\nA) Fingir que não viu.\nB) Apoiar a vítima e comunicar um responsável.\nC) Filmar para postar.",
+
+    "7. Qual atitude ajuda a prevenir a violência?\n\nA) Respeitar as diferenças.\nB) Espalhar boatos.\nC) Humilhar colegas.",
+
+    "8. Um amigo faz uma piada ofensiva contra mulheres.\n\nA) Aplaudir.\nB) Pedir que ele pare e explique por que é desrespeitoso.\nC) Repetir a piada.",
+
+    "9. Uma pessoa pede ajuda porque está sendo perseguida.\n\nA) Ignorar.\nB) Incentivar a denunciar e procurar apoio.\nC) Dizer que é exagero.",
+
+    "10. Como você pode contribuir para uma sociedade melhor?\n\nA) Praticando respeito e empatia.\nB) Incentivando preconceitos.\nC) Desrespeitando os outros."
+];
+
+let respostas = [
+    "B",
+    "C",
+    "B",
+    "C",
+    "A",
+    "B",
+    "A",
+    "B",
+    "B",
+    "A"
+];
+
+let acertos = 0;
+let erros = 0;
+let resposta;
+
+for (let i = 0; i < situacoes.length; i++) {
+    resposta = prompt(situacoes[i]).toUpperCase();
+
+    if (resposta == respostas[i]) {
+        acertos++;
+    } else {
+        erros++;
+    }
+}
+
+let aproveitamento = (acertos / situacoes.length) * 100;
+
+let classificacao = "";
+
+if (aproveitamento < 50) {
+    classificacao = "PRECISA MELHORAR";
+    mensagem = "Você está começando a aprender sobre esse tema tão importante. Continue participando das atividades da escola, estudando e refletindo sobre como pequenas atitudes de respeito podem fazer a diferença.";
+
+} 
+
+else if (aproveitamento < 70) {
+    classificacao = "BOM";
+    	mensagem = "Você já possui uma boa compreensão do assunto. Continue ampliando seus conhecimentos e incentive outras pessoas a praticarem o respeito, a empatia e a cidadania.";
+
+} 
+
+else if (aproveitamento < 100) {
+    classificacao = "MUITO BOM";
+    	mensagem = "Parabéns! Você demonstrou um ótimo conhecimento sobre o tema. Continue compartilhando informações corretas e contribuindo para um ambiente mais seguro, justo e respeitoso para todos.";
+
+} 
+
+else {
+    classificacao = "EXCELENTE";
+    	mensagem = "Excelente desempenho! Você demonstrou domínio do tema e reconhece a importância do respeito, da igualdade e da prevenção da violência contra a mulher. Continue sendo um exemplo de cidadania e conscientização.";
+}
+
+alert(
+"SIMULADOR CONCLUÍDO\n\n" +
+"Acertos: " + acertos +
+"\nErros: " + erros +
+"\nAproveitamento: " + aproveitamento + "%" +
+"\nClassificação: " + classificacao +
+"\n\n" + mensagem 
+);
+</script>

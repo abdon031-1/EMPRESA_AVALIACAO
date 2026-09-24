@@ -1,0 +1,261 @@
+<!-- 1 -->
+<script>
+function mostrarMensagem() {
+    console.log("Olá!");
+}
+
+mostrarMensagem();
+</script>
+
+
+<!-- 2 -->
+<script>
+function saudacao(nome) {
+    console.log("Olá, " + nome + "!");
+}
+
+saudacao("Maria");
+</script>
+
+
+<!-- 3 -->
+<script>
+function dobro() {
+    let numero = 10;
+    console.log(numero * 2);
+}
+
+dobro();
+</script>
+
+
+<!-- 4 -->
+<script>
+function dobro(numero) {
+    return numero * 2;
+}
+
+console.log(dobro(10));
+console.log(dobro(25));
+console.log(dobro(100));
+</script>
+
+
+<!-- 5 -->
+<script>
+function dobro(numero) {
+    return numero * 2;
+}
+
+let resultado1 = dobro(5);
+let resultado2 = dobro(8);
+let resultado3 = dobro(20);
+</script>
+
+
+<!-- 6 -->
+<script>
+function somar(a, b) {
+    return a + b;
+}
+
+let resultado = somar(10, 20);
+console.log(resultado);
+</script>
+
+
+<!-- 7 -->
+<script>
+function subtrair(a, b) {
+    return a - b;
+}
+
+console.log(subtrair(10, 3));
+console.log(subtrair(3, 10));
+</script>
+
+
+<!-- 8 -->
+<script>
+function calcularAreaRetangulo(largura, altura) {
+    return largura * altura;
+}
+
+let area = calcularAreaRetangulo(10, 5);
+console.log("Área:", area);
+</script>
+
+
+<!-- 9 -->
+<script>
+function calcularAreaRetangulo(largura, altura) {
+    return largura * altura;
+}
+
+console.log(calcularAreaRetangulo(10, 20));
+console.log(calcularAreaRetangulo(15, 30));
+console.log(calcularAreaRetangulo(25, 40));
+</script>
+
+
+<!-- 10 -->
+<script>
+function calcularMedia(nota1, nota2, nota3) {
+    return (nota1 + nota2 + nota3) / 3;
+}
+
+let media = calcularMedia(7, 8, 9);
+console.log(media);
+</script>
+
+
+<!-- 11 -->
+<script>
+function apresentar(nome) {
+    return "Olá, " + nome + "!";
+}
+
+console.log(apresentar("Carlos"));
+</script>
+
+
+<!-- 12 -->
+<script>
+function verificarMaioridade(idade) {
+    if (idade >= 18) {
+        return "Maior de idade";
+    } else {
+        return "Menor de idade";
+    }
+}
+
+console.log(verificarMaioridade(20));
+console.log(verificarMaioridade(15));
+</script>
+
+
+<!-- 13 -->
+<script>
+function somar(a, b) {
+    return a + b;
+}
+
+let numero1 = parseFloat(prompt("Digite o primeiro número:"));
+let numero2 = parseFloat(prompt("Digite o segundo número:"));
+
+let resultado = somar(numero1, numero2);
+
+alert("Resultado:" + resultado);
+</script>
+
+
+<!-- 14 -->
+<script>
+function mostrarTitulo() {
+    console.log("SISTEMA ESCOLAR");
+}
+
+mostrarTitulo();
+</script>
+
+
+<!-- 15 -->
+<script>
+function mostrarAluno(nome) {
+    console.log("Aluno:", nome);
+}
+
+mostrarAluno("Ana");
+</script>
+
+
+<!-- 16 -->
+<script>
+function mostrarMensagem(nome) {
+    console.log("Olá, " + nome);
+}
+
+mostrarMensagem("Humberto");
+</script>
+
+
+<!-- 17 -->
+<script>
+function dobro(numero) {
+    return numero * 2;
+}
+
+console.log(dobro(5));
+</script>
+
+
+<!-- 18 -->
+<script>
+function calcularMedia(nota1, nota2, nota3) {
+    return (nota1 + nota2 + nota3) / 3;
+}
+
+function verificarSituacao(media) {
+    if (media >= 6) {
+        return "Aprovado";
+    } else {
+        return "Reprovado";
+    }
+}
+
+let nome = prompt("Digite o nome do estudante:");
+let nota1 = parseFloat(prompt("Digite a primeira nota:"));
+let nota2 = parseFloat(prompt("Digite a segunda nota:"));
+let nota3 = parseFloat(prompt("Digite a terceira nota:"));
+
+let media = calcularMedia(nota1, nota2, nota3);
+let situacao = verificarSituacao(media);
+
+alert(
+    "Aluno: " + nome +
+    "\nMédia: " + media.toFixed(2) +
+    "\nSituação: " + situacao
+);
+</script>
+
+
+<!-- 19 -->
+<script>
+function somar(a, b) {
+    console.log(a + b);
+}
+</script>
+
+
+<!-- 20 -->
+<script>
+function somar(a, b) {
+    return a + b;
+}
+
+let resultado = somar(10, 20);
+
+alert(resultado);
+</script>
+
+
+<!-- 21 -->
+<script>
+function calcularArea(largura, altura) {
+    return largura * altura;
+}
+
+calcularArea(10, 5);
+calcularArea(20, 8);
+calcularArea(30, 10);
+</script>
+
+
+<!-- 22 -->
+<script>
+function calcularMedia(n1, n2, n3) {
+    return (n1 + n2 + n3) / 3;
+}
+
+alert(calcularMedia(7, 8, 9));
+</script>

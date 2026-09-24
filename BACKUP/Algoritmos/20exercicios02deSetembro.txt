@@ -1,0 +1,247 @@
+1.
+<script>
+function boasVindas(nome) {
+    alert("Bem-vindo, " + nome + "!");
+}
+
+boasVindas("João");
+</script>
+
+
+2.
+<script>
+function dobro(numero) {
+    return numero * 2;
+}
+
+alert(dobro(12));
+</script>
+
+
+3.
+<script>
+function triplo(numero) {
+    return numero * 3;
+}
+
+alert(triplo(7));
+</script>
+
+
+4.
+<script>
+function somar(numero1, numero2) {
+    return numero1 + numero2;
+}
+
+alert(somar(25, 17));
+</script>
+
+
+5.
+<script>
+function subtrair(numero1, numero2) {
+    return numero1 - numero2;
+}
+
+alert(subtrair(30, 12));
+</script>
+
+
+6.
+<script>
+function multiplicar(numero1, numero2) {
+    return numero1 * numero2;
+}
+
+alert(multiplicar(8, 6));
+</script>
+
+
+7.
+<script>
+function calcularMedia(nota1, nota2, nota3) {
+    return (nota1 + nota2 + nota3) / 3;
+}
+
+alert("Média: " + calcularMedia(6, 8, 7));
+</script>
+
+
+8.
+<script>
+function maiorNumero(numero1, numero2) {
+    if (numero1 > numero2) {
+        return numero1;
+    } else if (numero2 > numero1) {
+        return numero2;
+    } else {
+        return "Os números são iguais.";
+    }
+}
+
+alert(maiorNumero(25, 18));
+</script>
+
+
+9.
+<script>
+function calcularArea(largura, altura) {
+    return largura * altura;
+}
+
+alert("Área = " + calcularArea(15, 8));
+</script>
+
+
+10.
+<script>
+function celsiusParaFahrenheit(celsius) {
+    return (celsius * 9 / 5) + 32;
+}
+
+alert(celsiusParaFahrenheit(30));
+</script>
+
+
+11.
+<script>
+function cumprimentar(periodo) {
+    if (periodo === "manhã") {
+        alert("Bom dia!");
+    } else if (periodo === "tarde") {
+        alert("Boa tarde!");
+    } else if (periodo === "noite") {
+        alert("Boa noite!");
+    }
+}
+
+cumprimentar("tarde");
+</script>
+
+
+12.
+<script>
+function calcularDesconto(valor) {
+    return valor - 10;
+}
+
+alert(calcularDesconto(45));
+</script>
+
+
+13.
+<script>
+function contarAte(numero) {
+    for (let i = 1; i <= numero; i++) {
+        alert(i);
+    }
+}
+
+contarAte(5);
+</script>
+
+
+14.
+<script>
+function multiplicarTabuada(numero) {
+    for (let i = 1; i <= 10; i++) {
+        alert(numero + " x " + i + " = " + (numero * i));
+    }
+}
+
+multiplicarTabuada(3);
+</script>
+
+
+15.
+<script>
+function repetirTexto(texto, repeticoes) {
+    for (let i = 1; i <= repeticoes; i++) {
+        alert(texto);
+    }
+}
+
+repetirTexto("Olá!", 3);
+</script>
+
+
+16.
+<script>
+function converterDolarParaReal(dolares, valorDolar) {
+    return dolares * valorDolar;
+}
+
+alert("R$ " + converterDolarParaReal(20, 5));
+</script>
+
+
+17.
+<script>
+function calcularIMC(peso, altura) {
+    return peso / (altura * altura);
+}
+
+alert(calcularIMC(70, 1.75));
+</script>
+
+
+18.
+<script>
+function perimetroRetangulo(base, altura) {
+    return 2 * (base + altura);
+}
+
+function areaRetangulo(base, altura) {
+    return base * altura;
+}
+
+function exibirRelatorio(base, altura) {
+    alert("Perímetro: " + perimetroRetangulo(base, altura) +
+          "\nÁrea: " + areaRetangulo(base, altura));
+}
+
+exibirRelatorio(10, 5);
+</script>
+
+
+19.
+<script>
+function somar(numero1, numero2) {
+    return numero1 + numero2;
+}
+
+function subtrair(numero1, numero2) {
+    return numero1 - numero2;
+}
+
+function multiplicar(numero1, numero2) {
+    return numero1 * numero2;
+}
+
+function dividir(numero1, numero2) {
+    return numero1 / numero2;
+}
+
+let numero1 = Number(prompt("Digite o primeiro número:"));
+let numero2 = Number(prompt("Digite o segundo número:"));
+
+alert("Soma: " + somar(numero1, numero2) +
+      "\nSubtração: " + subtrair(numero1, numero2) +
+      "\nMultiplicação: " + multiplicar(numero1, numero2) +
+      "\nDivisão: " + dividir(numero1, numero2));
+</script>
+
+
+20.
+<script>
+function sacarDinheiro(valor) {
+    if (valor % 10 !== 0) {
+        return "Valor inválido para saque";
+    }
+
+    return (valor / 10) + " notas de R$ 10";
+}
+
+alert(sacarDinheiro(130));
+</script>

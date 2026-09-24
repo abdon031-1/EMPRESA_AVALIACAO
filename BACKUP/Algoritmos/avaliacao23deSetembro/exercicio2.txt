@@ -1,0 +1,161 @@
+2.
+
+<script>
+// 2. Desenvolva um programa em JavaScript que simule um sistema de vendas de produtos contendo, no mínimo, 2 funções, 1 laço de repetição e 1 lógica de decisão no programa para realizar os seguintes procedimentos: ler o(s) produto(s) vendido(s), valor(es) unitário(s) e quantidade(s) vendida(s); registrar a venda calculando o total da venda; calcular desconto, caso o produto tenha; receber pagamento e calcular troco (se pago em dinheiro).
+
+// função 1: lerProdutos;
+// vai perguntar quantos produtos vão ser vendidos e, para cada um, ler o nome, o valor por unidade e a quantidade vendida. Guarda tudo em um array.
+// ------------------------------------------------------
+function lerProdutos() {
+    let produtos = []; // array que vai guardar os produtos vendidos;
+
+    // pergunta quantos produtos vão ser registrados nesta venda;
+    let quantidadeProdutos = parseInt(prompt("Quantos produtos serão vendidos?"));
+
+    // validação: continua pedindo enquanto o valor não for um número válido maior que 0
+    while (isNaN(quantidadeProdutos) || quantidadeProdutos <= 0) {
+        quantidadeProdutos = parseInt(prompt("Valor inválido! Digite novamente a quantidade de produtos (maior que 0):"));
+    }
+
+    // laço de repetição (for): repete uma vez para cada produto;
+    for (let i = 1; i <= quantidadeProdutos; i++) {
+        // lê o nome do produto;
+        let nomeProduto = prompt("Digite o nome do produto " + i + ":");
+
+        // lê o valor por unidade do produto;
+        let valorUnitario = parseFloat(prompt("Digite o valor unitário do produto '" + nomeProduto + "':"));
+
+        // validação: valor unitário não pode ser negativo nem inválido;
+        while (isNaN(valorUnitario) || valorUnitario < 0) {
+            valorUnitario = parseFloat(prompt("Valor inválido! Digite novamente o valor unitário do produto '" + nomeProduto + "':"));
+        }
+
+        // lê a quantidade vendida daquele produto;
+        let quantidadeVendida = parseInt(prompt("Digite a quantidade vendida do produto '" + nomeProduto + "':"));
+
+        // validação: quantidade não pode ser negativa nem inválida;
+        while (isNaN(quantidadeVendida) || quantidadeVendida < 0) {
+            quantidadeVendida = parseInt(prompt("Valor inválido! Digite novamente a quantidade vendida do produto '" + nomeProduto + "':"));
+        }
+
+        // cria um objeto representando o produto e adiciona ao array "produtos";
+        // cada objeto guarda o nome, o valor unitário e a quantidade vendida
+        produtos.push({
+            nome: nomeProduto,
+            valorUnitario: valorUnitario,
+            quantidade: quantidadeVendida
+        });
+    }
+
+    // retorna o array com todos os produtos;
+    return produtos;
+}
+
+// ------------------------------------------------------
+// função 2: calcularTotalVenda;
+// vai passarr o array de produtos, calcular o subtotal de cada um (valor por unitário x quantidade) e somar tudo para ter o valor total da venda (sem desconto ainda);
+// ------------------------------------------------------
+function calcularTotalVenda(produtos) {
+    let totalVenda = 0; // acumulador do valor total da venda;
+
+    // laço de repetição: percorre cada produto do array;
+    for (let i = 0; i < produtos.length; i++) {
+        // calcula o subtotal do produto atual (valor unitário x quantidade)
+        let subtotalProduto = produtos[i].valorUnitario * produtos[i].quantidade;
+
+        // mostra o subtotal de cada produto para o usuário acompanhar;
+        console.log(produtos[i].nome + ": " + produtos[i].quantidade + " x R$ " + produtos[i].valorUnitario.toFixed(2) + " = R$ " + subtotalProduto.toFixed(2));
+
+        // soma o subtotal do produto atual ao total geral da venda;
+        totalVenda += subtotalProduto;
+    }
+
+    // retorna o valor total da venda (soma de todos os subtotal);
+    return totalVenda;
+}
+
+// ------------------------------------------------------
+// função 3: calcularDesconto
+// vai verificar se a venda tem direito a desconto. Regra utilizada: vendas com total acima de R$ 200,00 recebe 10% de desconto;
+// ------------------------------------------------------
+function calcularDesconto(totalVenda) {
+    let valorDesconto = 0; // valor do desconto, começa zerado;
+
+    // lógica de decisão: verifica se o total da venda ultrapassa 200;
+    if (totalVenda > 200) {
+        // se ultrapassar, calcula 10% de desconto sobre o total
+        valorDesconto = totalVenda * 0.10;
+    } else {
+        // caso contrário, não há desconto (permanece 0)
+        valorDesconto = 0;
+    }
+
+    // retorna o valor do desconto calculado
+    return valorDesconto;
+}
+
+// ------------------------------------------------------
+// função 4: receberPagamento
+// vai perguntar a forma de pagamento (validando se é "dinheiro" ou "cartao") e, caso seja em dinheiro, ler o valor pago e calcular o troco;
+// ------------------------------------------------------
+function receberPagamento(totalComDesconto) {
+    // rergunta a forma de pagamento;
+    let formaPagamento = prompt("Forma de pagamento (digite 'dinheiro' ou 'cartao'):").toLowerCase();
+
+    // laço de repetição (while): continua pedindo enquanto o valor digitado for diferente de "dinheiro" e "cartao";
+    while (formaPagamento !== "dinheiro" && formaPagamento !== "cartao") {
+        formaPagamento = prompt("Opção inválida! Digite apenas 'dinheiro' ou 'cartao':").toLowerCase();
+    }
+
+    // lógica de decisão: verifica se o pagamento será em dinheiro;
+    if (formaPagamento === "dinheiro") {
+        // lê o valor entregue pelo cliente;
+        let valorPago = parseFloat(prompt("Valor total a pagar: R$ " + totalComDesconto.toFixed(2) + "\nDigite o valor recebido em dinheiro:"));
+
+        // laço de repetição (while): continua pedindo o valor enquanto for inválido ou insuficiente para passar o total da compra;
+        while (isNaN(valorPago) || valorPago < totalComDesconto) {
+            valorPago = parseFloat(prompt("Valor insuficiente ou inválido! O total é R$ " + totalComDesconto.toFixed(2) + ". Digite novamente o valor recebido:"));
+        }
+
+        // calcula o troco: valor pago menos o valor total da compra;
+        let troco = valorPago - totalComDesconto;
+
+        // exibe o valor do troco ao usuário;
+       	alert("Valor pago: R$ " + valorPago.toFixed(2));
+        alert("Troco: R$ " + troco.toFixed(2));
+    } else {
+        // se for "cartao", não tem troco;
+        console.log("Pagamento efetuado via cartão. Não há troco a calcular.");
+    }
+}
+
+// ------------------------------------------------------
+// parte principal;
+// ------------------------------------------------------
+
+alert("Início da Venda");
+
+// 1º passo: lê os produtos vendidos (nome, valor unitário e quantidade);
+let produtosVendidos = lerProdutos();
+
+console.log("Itens da Venda");
+
+// 2º passo: calcula o valor total da venda (soma dos subtotais);
+let totalVenda = calcularTotalVenda(produtosVendidos);
+
+// 3º passo: calcula o desconto (caso a venda tenha direito);
+let desconto = calcularDesconto(totalVenda);
+
+// 4º passo: calcula o total final, já com o desconto aplicado;
+let totalComDesconto = totalVenda - desconto;
+
+alert("Resumo da Venda");
+alert("Total bruto: R$ " + totalVenda.toFixed(2));
+alert("Desconto aplicado: R$ " + desconto.toFixed(2));
+alert("Total a pagar: R$ " + totalComDesconto.toFixed(2));
+
+// 5º passo: recebe o pagamento e calcula o troco (se for em dinheiro)
+receberPagamento(totalComDesconto);
+
+alert("Venda Finalizada");
+</script>

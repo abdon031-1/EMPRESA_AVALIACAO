@@ -1,0 +1,2466 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Feira de Profissões</title>
+
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+        }
+
+
+        main {
+            min-height: 85vh;
+        }
+
+
+        .escondido {
+            display: none !important;
+        }
+
+
+        /* CABEÇALHO */
+
+        header {
+            background: #0f2d52;
+            color: white;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+
+        .logo {
+            font-size: 21px;
+            font-weight: bold;
+        }
+
+
+        .logo span {
+            color: #4da3ff;
+        }
+
+
+        /* INÍCIO */
+
+        .hero {
+            min-height: 85vh;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            text-align: center;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f2d52,
+                    #174b82
+                );
+
+            color: white;
+
+            padding: 40px 20px;
+        }
+
+
+        .hero-conteudo {
+            max-width: 800px;
+        }
+
+
+        .tag {
+            display: inline-block;
+
+            background: rgba(255,255,255,0.12);
+
+            border: 1px solid rgba(255,255,255,0.2);
+
+            padding: 8px 16px;
+
+            border-radius: 30px;
+
+            margin-bottom: 20px;
+
+            font-size: 14px;
+        }
+
+
+        .hero h1 {
+            font-size: 58px;
+
+            line-height: 1.05;
+
+            margin-bottom: 25px;
+        }
+
+
+        .hero h1 span {
+            color: #65b5ff;
+        }
+
+
+        .hero p {
+            font-size: 19px;
+
+            line-height: 1.7;
+
+            color: #dcecff;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* PÁGINAS */
+
+        .pagina {
+            max-width: 1050px;
+
+            margin: auto;
+
+            padding: 60px 25px;
+        }
+
+
+        .titulo {
+            text-align: center;
+
+            margin-bottom: 40px;
+        }
+
+
+        .titulo h2 {
+            font-size: 36px;
+
+            color: #0f2d52;
+
+            margin-bottom: 12px;
+        }
+
+
+        .titulo p {
+            color: #667085;
+
+            font-size: 17px;
+        }
+
+
+        /* BOTÕES */
+
+        .btn {
+            border: none;
+
+            padding: 14px 25px;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+            font-weight: bold;
+
+            cursor: pointer;
+
+            background: #2f8df6;
+
+            color: white;
+        }
+
+
+        .btn:hover {
+            background: #1976d2;
+        }
+
+
+        .btn-perigo {
+            background: #b83232;
+        }
+
+
+        .btn-perigo:hover {
+            background: #922727;
+        }
+
+
+        /* CAIXA */
+
+        .caixa {
+            background: white;
+
+            border-radius: 14px;
+
+            padding: 35px;
+
+            box-shadow:
+                0 8px 30px rgba(15,45,82,0.08);
+
+            margin-bottom: 25px;
+        }
+
+
+        /* TERMO */
+
+        .termo-texto {
+            background: #f8fafc;
+
+            border-left: 4px solid #2f8df6;
+
+            padding: 25px;
+
+            line-height: 1.7;
+
+            margin-bottom: 30px;
+
+            border-radius: 6px;
+        }
+
+
+        .termo-texto p {
+            margin-bottom: 15px;
+        }
+
+
+        /* FORMULÁRIO */
+
+        .formulario {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+        }
+
+
+        .campo {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 8px;
+        }
+
+
+        .campo label {
+            font-weight: bold;
+
+            font-size: 14px;
+        }
+
+
+        .campo input {
+            padding: 13px;
+
+            border: 1px solid #d0d5dd;
+
+            border-radius: 7px;
+
+            font-size: 15px;
+
+            outline: none;
+        }
+
+
+        .campo input:focus {
+            border-color: #2f8df6;
+
+            box-shadow:
+                0 0 0 3px rgba(47,141,246,0.12);
+        }
+
+
+        .check {
+            display: flex;
+
+            align-items: flex-start;
+
+            gap: 10px;
+
+            margin: 25px 0;
+
+            line-height: 1.5;
+        }
+
+
+        .check input {
+            margin-top: 4px;
+        }
+
+
+        .acoes {
+            display: flex;
+
+            gap: 12px;
+
+            flex-wrap: wrap;
+        }
+
+
+        /* TESTE VOCACIONAL */
+
+        .teste-introducao {
+            text-align: center;
+
+            max-width: 750px;
+
+            margin: 0 auto 35px;
+        }
+
+
+        .teste-introducao p {
+            line-height: 1.7;
+
+            color: #667085;
+        }
+
+
+        .progresso-area {
+            margin-bottom: 30px;
+        }
+
+
+        .progresso-texto {
+            display: flex;
+
+            justify-content: space-between;
+
+            margin-bottom: 8px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
+        .barra {
+            width: 100%;
+
+            height: 8px;
+
+            background: #e5e7eb;
+
+            border-radius: 10px;
+
+            overflow: hidden;
+        }
+
+
+        .barra-progresso {
+            height: 100%;
+
+            width: 0%;
+
+            background: #2f8df6;
+        }
+
+
+        .pergunta {
+            font-size: 25px;
+
+            color: #0f2d52;
+
+            margin-bottom: 12px;
+
+            line-height: 1.4;
+        }
+
+
+        .subpergunta {
+            color: #667085;
+
+            margin-bottom: 25px;
+
+            line-height: 1.5;
+        }
+
+
+        .alternativas {
+            display: flex;
+
+            flex-direction: column;
+
+            gap: 12px;
+        }
+
+
+        .alternativa {
+            background: white;
+
+            border: 2px solid #e4e7ec;
+
+            padding: 17px;
+
+            border-radius: 9px;
+
+            cursor: pointer;
+
+            line-height: 1.4;
+        }
+
+
+        .alternativa:hover {
+            border-color: #2f8df6;
+
+            background: #f5faff;
+        }
+
+
+        .alternativa.selecionada {
+            border-color: #2f8df6;
+
+            background: #eaf4ff;
+        }
+
+
+        /* RESULTADO */
+
+        .resultado {
+            text-align: center;
+
+            max-width: 900px;
+
+            margin: auto;
+        }
+
+
+        .resultado-topo {
+            background:
+                linear-gradient(
+                    135deg,
+                    #0f2d52,
+                    #2167a6
+                );
+
+            color: white;
+
+            padding: 40px;
+
+            border-radius: 15px;
+
+            margin-bottom: 25px;
+        }
+
+
+        .resultado-topo h2 {
+            font-size: 36px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .resultado-topo p {
+            color: #dcecff;
+
+            line-height: 1.6;
+        }
+
+
+        .area-principal {
+            font-size: 38px;
+
+            font-weight: bold;
+
+            margin: 20px 0;
+
+            color: #65b5ff;
+        }
+
+
+        .percentual {
+            font-size: 18px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .resultado-grid {
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            gap: 20px;
+
+            text-align: left;
+        }
+
+
+        .resultado-card {
+            background: white;
+
+            padding: 28px;
+
+            border-radius: 12px;
+
+            box-shadow:
+                0 5px 20px rgba(0,0,0,0.06);
+
+            border: 1px solid #edf0f5;
+        }
+
+
+        .resultado-card h3 {
+            color: #0f2d52;
+
+            margin-bottom: 15px;
+        }
+
+
+        .resultado-card p {
+            color: #667085;
+
+            line-height: 1.7;
+        }
+
+
+        .profissoes {
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 10px;
+
+            list-style: none;
+        }
+
+
+        .profissoes li {
+            background: #eaf4ff;
+
+            color: #175a99;
+
+            padding: 9px 13px;
+
+            border-radius: 20px;
+
+            font-size: 14px;
+
+            font-weight: bold;
+        }
+
+
+        .segunda-area {
+            color: #2f8df6;
+
+            font-weight: bold;
+
+            font-size: 18px;
+        }
+
+
+        /* FINAL */
+
+        .final {
+            text-align: center;
+
+            min-height: 70vh;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+
+            align-items: center;
+        }
+
+
+        .final-icone {
+            font-size: 70px;
+
+            margin-bottom: 20px;
+        }
+
+
+        .final h2 {
+            font-size: 40px;
+
+            color: #0f2d52;
+
+            margin-bottom: 15px;
+        }
+
+
+        .final p {
+            max-width: 600px;
+
+            line-height: 1.7;
+
+            color: #667085;
+
+            margin-bottom: 15px;
+        }
+
+
+        /* RODAPÉ */
+
+        footer {
+            background: #0f2d52;
+
+            color: #cbd9e8;
+
+            text-align: center;
+
+            padding: 25px;
+
+            font-size: 14px;
+        }
+
+
+        /* RESPONSIVO */
+
+        @media (max-width: 700px) {
+
+            .hero h1 {
+                font-size: 40px;
+            }
+
+
+            .hero p {
+                font-size: 16px;
+            }
+
+
+            .pagina {
+                padding: 45px 18px;
+            }
+
+
+            .formulario {
+                grid-template-columns: 1fr;
+            }
+
+
+            .resultado-grid {
+                grid-template-columns: 1fr;
+            }
+
+
+            .caixa {
+                padding: 22px;
+            }
+
+
+            .pergunta {
+                font-size: 21px;
+            }
+
+
+            .resultado-topo {
+                padding: 28px 20px;
+            }
+
+
+            .resultado-topo h2 {
+                font-size: 28px;
+            }
+
+
+            .area-principal {
+                font-size: 30px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <header>
+
+        <div class="logo">
+            FEIRA<span>PROFISSÕES</span>
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- ========================= -->
+        <!-- INÍCIO -->
+        <!-- ========================= -->
+
+        <section
+            id="inicio"
+            class="hero"
+        >
+
+            <div class="hero-conteudo">
+
+                <div class="tag">
+                    Feira de Profissões
+                </div>
+
+
+                <h1>
+                    Descubra qual área
+                    combina com
+                    <span>você.</span>
+                </h1>
+
+
+                <p>
+                    Responda algumas perguntas sobre seus interesses,
+                    habilidades e preferências e descubra quais áreas
+                    profissionais podem ter mais relação com o seu perfil.
+                </p>
+
+
+                <button
+                    class="btn"
+                    onclick="abrirTermo()"
+                >
+                    Começar teste
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- TERMO -->
+        <!-- ========================= -->
+
+        <section
+            id="termo"
+            class="pagina escondido"
+        >
+
+            <div class="titulo">
+
+                <h2>
+                    Termo de Consentimento
+                </h2>
+
+                <p>
+                    Antes de continuar, leia atentamente as informações.
+                </p>
+
+            </div>
+
+
+            <div class="caixa">
+
+                <div class="termo-texto">
+
+                    <h3>
+                        Declaração de Consentimento e Privacidade (LGPD)
+                    </h3>
+
+                    <br>
+
+
+                    <p>
+                        Ao preencher e enviar este formulário, eu:
+                        ______________________________
+                        (ou meu responsável legal:
+                        ______________________________)
+                        autorizo o IFSP Campus Caraguatatuba a coletar
+                        e tratar os meus dados para a seguinte finalidade:
+                    </p>
+
+
+                    <p>
+
+                        <strong>
+                            Controle e estatística:
+                        </strong>
+
+                        Registrar sua presença no evento, contabilizar o
+                        número total de visitantes e analisar o perfil geral
+                        do público para o planejamento e melhoria de futuras
+                        edições.
+
+                    </p>
+
+
+                    <p>
+                        Os dados coletados serão utilizados exclusivamente
+                        para fins de análise interna e relatórios estatísticos,
+                        armazenados em ambiente seguro e nunca serão
+                        compartilhados com terceiros ou utilizados para envio
+                        de publicidade.
+                    </p>
+
+
+                    <p>
+                        A exclusão dos dados ou a revogação deste consentimento
+                        pode ser solicitada pelo seu e-mail.
+                    </p>
+
+                </div>
+
+
+                <h3>
+                    Dados do participante
+                </h3>
+
+
+                <br>
+
+
+                <div class="formulario">
+
+
+                    <div class="campo">
+
+                        <label for="nome">
+                            Nome completo *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            placeholder="Digite seu nome"
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="idade">
+                            Idade *
+                        </label>
+
+                        <input
+                            type="number"
+                            id="idade"
+                            placeholder="Digite sua idade"
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="responsavel">
+                            Nome do responsável, caso seja menor
+                        </label>
+
+                        <input
+                            type="text"
+                            id="responsavel"
+                            placeholder="Nome do responsável"
+                        >
+
+                    </div>
+
+
+                    <div class="campo">
+
+                        <label for="email">
+                            E-mail *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="Digite seu e-mail"
+                        >
+
+                    </div>
+
+
+                </div>
+
+
+                <div class="check">
+
+                    <input
+                        type="checkbox"
+                        id="consentimento"
+                    >
+
+
+                    <label for="consentimento">
+
+                        Declaro que li os termos e, sendo maior de idade
+                        ou estando autorizado pelos meus pais/responsáveis,
+                        aceito o tratamento dos meus dados.
+
+                    </label>
+
+                </div>
+
+
+                <div class="acoes">
+
+                    <button
+                        class="btn"
+                        onclick="aceitarTermo()"
+                    >
+                        Aceitar e continuar
+                    </button>
+
+
+                    <button
+                        class="btn btn-perigo"
+                        onclick="recusarTermo()"
+                    >
+                        Não quero participar
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- RECUSA -->
+        <!-- ========================= -->
+
+        <section
+            id="recusado"
+            class="pagina escondido"
+        >
+
+            <div class="final">
+
+                <div class="final-icone">
+                    👋
+                </div>
+
+
+                <h2>
+                    Obrigado pela participação!
+                </h2>
+
+
+                <p>
+                    Você optou por não participar do tratamento de dados.
+                    Agradecemos mesmo assim pela sua presença na Feira
+                    de Profissões.
+                </p>
+
+
+                <button
+                    class="btn"
+                    onclick="voltarInicio()"
+                >
+                    Voltar ao início
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- TESTE VOCACIONAL -->
+        <!-- ========================= -->
+
+        <section
+            id="teste"
+            class="pagina escondido"
+        >
+
+            <div class="teste-introducao">
+
+                <div class="titulo">
+
+                    <h2>
+                        Teste Vocacional
+                    </h2>
+
+                    <p>
+                        Responda de acordo com o que realmente combina
+                        com você.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="quiz-container">
+
+
+                <div class="progresso-area">
+
+                    <div class="progresso-texto">
+
+                        <span id="numeroPergunta">
+                            Pergunta 1 de 15
+                        </span>
+
+
+                        <span id="porcentagem">
+                            0%
+                        </span>
+
+                    </div>
+
+
+                    <div class="barra">
+
+                        <div
+                            class="barra-progresso"
+                            id="barraProgresso"
+                        ></div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="caixa">
+
+
+                    <h3
+                        class="pergunta"
+                        id="pergunta"
+                    ></h3>
+
+
+                    <p
+                        class="subpergunta"
+                        id="subpergunta"
+                    ></p>
+
+
+                    <div
+                        class="alternativas"
+                        id="alternativas"
+                    ></div>
+
+
+                    <br>
+
+
+                    <button
+                        class="btn"
+                        onclick="proximaPergunta()"
+                    >
+                        Próxima pergunta →
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- RESULTADO -->
+        <!-- ========================= -->
+
+        <section
+            id="resultado"
+            class="pagina escondido"
+        >
+
+            <div class="resultado">
+
+
+                <div class="resultado-topo">
+
+                    <h2>
+                        Seu perfil profissional
+                    </h2>
+
+
+                    <p>
+                        Com base nas suas respostas, a área que mais
+                        se relaciona com suas preferências é:
+                    </p>
+
+
+                    <div
+                        class="area-principal"
+                        id="areaPrincipal"
+                    >
+                    </div>
+
+
+                    <div
+                        class="percentual"
+                        id="percentual"
+                    >
+                    </div>
+
+                </div>
+
+
+                <div class="resultado-grid">
+
+
+                    <div class="resultado-card">
+
+                        <h3>
+                            🧠 Sobre seu perfil
+                        </h3>
+
+
+                        <p id="descricaoPerfil">
+                        </p>
+
+                    </div>
+
+
+                    <div class="resultado-card">
+
+                        <h3>
+                            ⭐ Suas características
+                        </h3>
+
+
+                        <p id="caracteristicas">
+                        </p>
+
+                    </div>
+
+
+                    <div class="resultado-card">
+
+                        <h3>
+                            💼 Profissões que podem combinar
+                        </h3>
+
+
+                        <ul
+                            class="profissoes"
+                            id="profissoes"
+                        >
+                        </ul>
+
+                    </div>
+
+
+                    <div class="resultado-card">
+
+                        <h3>
+                            🔎 Segunda área mais compatível
+                        </h3>
+
+
+                        <p>
+                            Além da sua área principal,
+                            suas respostas também indicaram
+                            afinidade com:
+                        </p>
+
+
+                        <br>
+
+
+                        <div
+                            class="segunda-area"
+                            id="segundaArea"
+                        >
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+
+                <br><br>
+
+
+                <button
+                    class="btn"
+                    onclick="finalizarTeste()"
+                >
+                    Finalizar teste
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================= -->
+        <!-- FINAL -->
+        <!-- ========================= -->
+
+        <section
+            id="final"
+            class="pagina escondido"
+        >
+
+            <div class="final">
+
+
+                <div class="final-icone">
+                    🎉
+                </div>
+
+
+                <h2>
+                    Obrigado pela participação!
+                </h2>
+
+
+                <p>
+                    Esperamos que o teste tenha ajudado você a conhecer
+                    um pouco mais sobre seus interesses e possibilidades
+                    profissionais.
+                </p>
+
+
+                <p>
+                    Lembre-se: o resultado é apenas uma orientação e
+                    não determina qual profissão você deve seguir.
+                </p>
+
+
+                <button
+                    class="btn"
+                    onclick="voltarInicio()"
+                >
+                    Voltar ao início
+                </button>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        Feira de Profissões • Projeto escolar
+
+    </footer>
+
+
+    <script>
+
+
+        /* ========================= */
+        /* CONTROLE DAS TELAS */
+        /* ========================= */
+
+
+        function esconderTodas() {
+
+            document.getElementById("inicio")
+                .classList.add("escondido");
+
+
+            document.getElementById("termo")
+                .classList.add("escondido");
+
+
+            document.getElementById("recusado")
+                .classList.add("escondido");
+
+
+            document.getElementById("teste")
+                .classList.add("escondido");
+
+
+            document.getElementById("resultado")
+                .classList.add("escondido");
+
+
+            document.getElementById("final")
+                .classList.add("escondido");
+
+        }
+
+
+        function abrirTermo() {
+
+            esconderTodas();
+
+
+            document.getElementById("termo")
+                .classList.remove("escondido");
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        /* ========================= */
+        /* TERMO */
+        /* ========================= */
+
+
+        function aceitarTermo() {
+
+            const nome =
+                document.getElementById("nome").value.trim();
+
+
+            const idade =
+                document.getElementById("idade").value;
+
+
+            const email =
+                document.getElementById("email").value.trim();
+
+
+            const responsavel =
+                document.getElementById("responsavel").value.trim();
+
+
+            const consentimento =
+                document.getElementById("consentimento").checked;
+
+
+            if (
+                nome === "" ||
+                idade === "" ||
+                email === ""
+            ) {
+
+                alert(
+                    "Preencha os campos obrigatórios."
+                );
+
+                return;
+
+            }
+
+
+            if (
+                idade < 18 &&
+                responsavel === ""
+            ) {
+
+                alert(
+                    "Informe o nome do responsável."
+                );
+
+                return;
+
+            }
+
+
+            if (!consentimento) {
+
+                alert(
+                    "É necessário aceitar o termo para continuar."
+                );
+
+                return;
+
+            }
+
+
+            iniciarTeste();
+
+        }
+
+
+        function recusarTermo() {
+
+            esconderTodas();
+
+
+            document.getElementById("recusado")
+                .classList.remove("escondido");
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        /* ========================= */
+        /* ÁREAS PROFISSIONAIS */
+        /* ========================= */
+
+
+        const areas = {
+
+            tecnologia: {
+
+                nome: "Tecnologia",
+
+                descricao:
+                    "Você demonstra curiosidade, facilidade para resolver problemas e interesse por ferramentas, sistemas e inovação. Gosta de entender como as coisas funcionam e encontrar soluções.",
+
+                caracteristicas:
+                    "Raciocínio lógico, curiosidade, criatividade, resolução de problemas e interesse por inovação.",
+
+                profissoes: [
+                    "Desenvolvedor de Software",
+                    "Analista de Sistemas",
+                    "Cientista de Dados",
+                    "Especialista em Cibersegurança",
+                    "Desenvolvedor Web"
+                ]
+
+            },
+
+
+            humanas: {
+
+                nome: "Ciências Humanas",
+
+                descricao:
+                    "Você demonstra interesse por pessoas, sociedade, cultura e diferentes formas de compreender o mundo. Pode gostar de analisar situações e discutir ideias.",
+
+                caracteristicas:
+                    "Comunicação, pensamento crítico, curiosidade, empatia e capacidade de análise.",
+
+                profissoes: [
+                    "Professor",
+                    "Advogado",
+                    "Historiador",
+                    "Geógrafo",
+                    "Sociólogo"
+                ]
+
+            },
+
+
+            saude: {
+
+                nome: "Saúde e Bem-estar",
+
+                descricao:
+                    "Você demonstra interesse em ajudar pessoas e compreender o funcionamento do corpo e da saúde. Pode se identificar com atividades que envolvam cuidado e responsabilidade.",
+
+                caracteristicas:
+                    "Empatia, responsabilidade, atenção, disciplina e interesse pelo cuidado com pessoas.",
+
+                profissoes: [
+                    "Médico",
+                    "Enfermeiro",
+                    "Fisioterapeuta",
+                    "Nutricionista",
+                    "Psicólogo"
+                ]
+
+            },
+
+
+            exatas: {
+
+                nome: "Ciências Exatas",
+
+                descricao:
+                    "Você demonstra afinidade com números, lógica, cálculos e resolução de problemas. Pode gostar de encontrar respostas utilizando raciocínio e análise.",
+
+                caracteristicas:
+                    "Raciocínio lógico, concentração, organização, precisão e capacidade analítica.",
+
+                profissoes: [
+                    "Engenheiro",
+                    "Matemático",
+                    "Físico",
+                    "Estatístico",
+                    "Atuário"
+                ]
+
+            },
+
+
+            comunicacao: {
+
+                nome: "Comunicação e Criatividade",
+
+                descricao:
+                    "Você demonstra interesse em expressar ideias, criar conteúdos e se comunicar com outras pessoas. Pode gostar de atividades que envolvam criatividade.",
+
+                caracteristicas:
+                    "Criatividade, comunicação, expressão, imaginação e capacidade de trabalhar com ideias.",
+
+                profissoes: [
+                    "Jornalista",
+                    "Publicitário",
+                    "Designer",
+                    "Roteirista",
+                    "Produtor de Conteúdo"
+                ]
+
+            },
+
+
+            gestao: {
+
+                nome: "Gestão e Negócios",
+
+                descricao:
+                    "Você demonstra interesse por organização, planejamento, liderança e tomada de decisões. Pode gostar de coordenar projetos e trabalhar com objetivos.",
+
+                caracteristicas:
+                    "Liderança, organização, comunicação, planejamento e tomada de decisões.",
+
+                profissoes: [
+                    "Administrador",
+                    "Empreendedor",
+                    "Economista",
+                    "Gestor de Projetos",
+                    "Analista Financeiro"
+                ]
+
+            }
+
+        };
+
+
+        /* ========================= */
+        /* PERGUNTAS */
+        /* ========================= */
+
+
+        const perguntas = [
+
+            {
+                pergunta:
+                    "Quando você recebe um problema difícil, o que prefere fazer?",
+
+                sub:
+                    "Escolha a alternativa que mais combina com você.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Tentar entender a lógica do problema e encontrar uma solução.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Pesquisar informações e analisar diferentes pontos de vista.",
+                        area: "humanas"
+                    },
+
+                    {
+                        texto:
+                            "Fazer cálculos ou utilizar dados para chegar a uma resposta.",
+                        area: "exatas"
+                    },
+
+                    {
+                        texto:
+                            "Conversar com outras pessoas para encontrar uma solução.",
+                        area: "comunicacao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Qual atividade você escolheria para fazer no seu tempo livre?",
+
+                sub:
+                    "Pense na atividade que você faria por vontade própria.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Aprender a programar ou mexer em tecnologia.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Ler sobre história, política ou sociedade.",
+                        area: "humanas"
+                    },
+
+                    {
+                        texto:
+                            "Resolver desafios matemáticos ou lógicos.",
+                        area: "exatas"
+                    },
+
+                    {
+                        texto:
+                            "Criar vídeos, desenhos, textos ou outros conteúdos.",
+                        area: "comunicacao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Como você se sente trabalhando com outras pessoas?",
+
+                sub:
+                    "Escolha a situação mais próxima da sua personalidade.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Gosto de trabalhar em equipe para desenvolver soluções.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Gosto de conversar, ouvir opiniões e ajudar as pessoas.",
+                        area: "saude"
+                    },
+
+                    {
+                        texto:
+                            "Prefiro organizar a equipe e dividir as tarefas.",
+                        area: "gestao"
+                    },
+
+                    {
+                        texto:
+                            "Gosto de apresentar ideias e me comunicar.",
+                        area: "comunicacao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Qual dessas situações parece mais interessante?",
+
+                sub:
+                    "Não existe resposta certa ou errada.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Criar um aplicativo para resolver um problema.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Estudar o comportamento de uma sociedade.",
+                        area: "humanas"
+                    },
+
+                    {
+                        texto:
+                            "Projetar uma máquina ou estrutura.",
+                        area: "exatas"
+                    },
+
+                    {
+                        texto:
+                            "Planejar uma campanha para divulgar uma ideia.",
+                        area: "comunicacao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Qual característica você considera mais importante em você?",
+
+                sub:
+                    "Escolha a que mais representa seu jeito.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Curiosidade.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Empatia.",
+                        area: "saude"
+                    },
+
+                    {
+                        texto:
+                            "Precisão.",
+                        area: "exatas"
+                    },
+
+                    {
+                        texto:
+                            "Criatividade.",
+                        area: "comunicacao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Imagine que você precisa organizar um grande evento. O que faria?",
+
+                sub:
+                    "Pense no papel que você gostaria de assumir.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Criaria um sistema para organizar as informações.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Cuidaria das pessoas e das necessidades dos participantes.",
+                        area: "saude"
+                    },
+
+                    {
+                        texto:
+                            "Planejaria o orçamento e dividiria as tarefas.",
+                        area: "gestao"
+                    },
+
+                    {
+                        texto:
+                            "Criaria a divulgação e a identidade visual do evento.",
+                        area: "comunicacao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Qual tipo de desafio mais desperta sua curiosidade?",
+
+                sub:
+                    "Escolha o que você teria mais vontade de resolver.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Descobrir por que um programa não está funcionando.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Entender por que as pessoas pensam de maneiras diferentes.",
+                        area: "humanas"
+                    },
+
+                    {
+                        texto:
+                            "Resolver um problema envolvendo números.",
+                        area: "exatas"
+                    },
+
+                    {
+                        texto:
+                            "Encontrar uma maneira criativa de apresentar uma ideia.",
+                        area: "comunicacao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Qual ambiente de trabalho parece mais interessante?",
+
+                sub:
+                    "Imagine onde você gostaria de passar boa parte do seu dia.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Um laboratório de tecnologia ou empresa de software.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Uma escola, universidade ou instituição de pesquisa.",
+                        area: "humanas"
+                    },
+
+                    {
+                        texto:
+                            "Um hospital, clínica ou centro de saúde.",
+                        area: "saude"
+                    },
+
+                    {
+                        texto:
+                            "Uma empresa onde eu possa liderar projetos.",
+                        area: "gestao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Quando aprende algo novo, qual método funciona melhor para você?",
+
+                sub:
+                    "Pense em como você prefere aprender.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Testar e descobrir como funciona na prática.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Ler, pesquisar e discutir o assunto.",
+                        area: "humanas"
+                    },
+
+                    {
+                        texto:
+                            "Praticar exercícios e resolver problemas.",
+                        area: "exatas"
+                    },
+
+                    {
+                        texto:
+                            "Criar algo usando o que aprendi.",
+                        area: "comunicacao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Qual destas atividades você faria com mais facilidade?",
+
+                sub:
+                    "Escolha a opção que mais se aproxima de você.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Aprender uma nova ferramenta digital.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Explicar um assunto para outra pessoa.",
+                        area: "humanas"
+                    },
+
+                    {
+                        texto:
+                            "Analisar números e encontrar padrões.",
+                        area: "exatas"
+                    },
+
+                    {
+                        texto:
+                            "Criar uma apresentação interessante.",
+                        area: "comunicacao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Que tipo de impacto você gostaria de causar?",
+
+                sub:
+                    "Pense no que faria seu trabalho ter significado.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Criar soluções que facilitem a vida das pessoas.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Ajudar pessoas a melhorar sua qualidade de vida.",
+                        area: "saude"
+                    },
+
+                    {
+                        texto:
+                            "Contribuir para o conhecimento e educação.",
+                        area: "humanas"
+                    },
+
+                    {
+                        texto:
+                            "Criar projetos que inspirem outras pessoas.",
+                        area: "comunicacao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Como você costuma tomar decisões?",
+
+                sub:
+                    "Escolha a opção mais próxima do seu comportamento.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Analiso o problema e procuro a solução mais eficiente.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Penso em como minha decisão afetará outras pessoas.",
+                        area: "saude"
+                    },
+
+                    {
+                        texto:
+                            "Comparo dados, números e possibilidades.",
+                        area: "exatas"
+                    },
+
+                    {
+                        texto:
+                            "Converso com outras pessoas antes de decidir.",
+                        area: "gestao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Qual destas tarefas parece mais interessante?",
+
+                sub:
+                    "Imagine que você recebeu todas essas opções.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Criar um site ou aplicativo.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Pesquisar sobre uma sociedade ou período histórico.",
+                        area: "humanas"
+                    },
+
+                    {
+                        texto:
+                            "Projetar uma estrutura ou calcular medidas.",
+                        area: "exatas"
+                    },
+
+                    {
+                        texto:
+                            "Criar uma campanha de divulgação.",
+                        area: "comunicacao"
+                    }
+
+                ]
+
+            },
+
+
+            {
+                pergunta:
+                    "Qual dessas frases combina mais com você?",
+
+                sub:
+                    "Escolha apenas uma.",
+
+                alternativas: [
+
+                    {
+                        texto:
+                            "Gosto de descobrir como as coisas funcionam.",
+                        area: "tecnologia"
+                    },
+
+                    {
+                        texto:
+                            "Gosto de entender as pessoas e a sociedade.",
+                        area: "humanas"
+                    },
+
+                    {
+                        texto:
+                            "Gosto de números, lógica e desafios.",
+                        area: "exatas"
+                    },
+
+                    {
+                        texto:
+                            "Gosto de criar e expressar minhas ideias.",
+                        area: "comunicacao"
+                    }
+
+                ]
+
+            }
+
+        ];
+
+
+        /* ========================= */
+        /* VARIÁVEIS */
+        /* ========================= */
+
+
+        let perguntaAtual = 0;
+
+        let respostaEscolhida = null;
+
+
+        let pontuacoes = {
+
+            tecnologia: 0,
+
+            humanas: 0,
+
+            saude: 0,
+
+            exatas: 0,
+
+            comunicacao: 0,
+
+            gestao: 0
+
+        };
+
+
+        /* ========================= */
+        /* INICIAR TESTE */
+        /* ========================= */
+
+
+        function iniciarTeste() {
+
+            perguntaAtual = 0;
+
+            respostaEscolhida = null;
+
+
+            pontuacoes = {
+
+                tecnologia: 0,
+
+                humanas: 0,
+
+                saude: 0,
+
+                exatas: 0,
+
+                comunicacao: 0,
+
+                gestao: 0
+
+            };
+
+
+            esconderTodas();
+
+
+            document.getElementById("teste")
+                .classList.remove("escondido");
+
+
+            mostrarPergunta();
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        /* ========================= */
+        /* MOSTRAR PERGUNTA */
+        /* ========================= */
+
+
+        function mostrarPergunta() {
+
+            const pergunta =
+                perguntas[perguntaAtual];
+
+
+            document.getElementById("pergunta")
+                .textContent =
+                pergunta.pergunta;
+
+
+            document.getElementById("subpergunta")
+                .textContent =
+                pergunta.sub;
+
+
+            document.getElementById("numeroPergunta")
+                .textContent =
+                "Pergunta " +
+                (perguntaAtual + 1) +
+                " de " +
+                perguntas.length;
+
+
+            const porcentagem =
+                (perguntaAtual /
+                perguntas.length) *
+                100;
+
+
+            document.getElementById("porcentagem")
+                .textContent =
+                Math.round(porcentagem) +
+                "%";
+
+
+            document.getElementById("barraProgresso")
+                .style.width =
+                porcentagem +
+                "%";
+
+
+            const alternativas =
+                document.getElementById("alternativas");
+
+
+            alternativas.innerHTML = "";
+
+
+            pergunta.alternativas.forEach(
+                function(alternativa) {
+
+
+                    const elemento =
+                        document.createElement("div");
+
+
+                    elemento.classList.add(
+                        "alternativa"
+                    );
+
+
+                    elemento.textContent =
+                        alternativa.texto;
+
+
+                    elemento.onclick =
+                        function() {
+
+                            selecionarAlternativa(
+                                elemento,
+                                alternativa.area
+                            );
+
+                        };
+
+
+                    alternativas.appendChild(
+                        elemento
+                    );
+
+                }
+            );
+
+        }
+
+
+        /* ========================= */
+        /* SELECIONAR RESPOSTA */
+        /* ========================= */
+
+
+        function selecionarAlternativa(
+            elemento,
+            area
+        ) {
+
+            const todas =
+                document.querySelectorAll(
+                    ".alternativa"
+                );
+
+
+            todas.forEach(
+                function(item) {
+
+                    item.classList.remove(
+                        "selecionada"
+                    );
+
+                }
+            );
+
+
+            elemento.classList.add(
+                "selecionada"
+            );
+
+
+            respostaEscolhida = area;
+
+        }
+
+
+        /* ========================= */
+        /* PRÓXIMA PERGUNTA */
+        /* ========================= */
+
+
+        function proximaPergunta() {
+
+            if (
+                respostaEscolhida === null
+            ) {
+
+                alert(
+                    "Escolha uma alternativa antes de continuar."
+                );
+
+                return;
+
+            }
+
+
+            pontuacoes[
+                respostaEscolhida
+            ]++;
+
+
+            perguntaAtual++;
+
+
+            respostaEscolhida = null;
+
+
+            if (
+                perguntaAtual <
+                perguntas.length
+            ) {
+
+                mostrarPergunta();
+
+            } else {
+
+                mostrarResultado();
+
+            }
+
+        }
+
+
+        /* ========================= */
+        /* RESULTADO */
+        /* ========================= */
+
+
+        function mostrarResultado() {
+
+            esconderTodas();
+
+
+            document.getElementById("resultado")
+                .classList.remove("escondido");
+
+
+            const ranking =
+                Object.entries(
+                    pontuacoes
+                ).sort(
+                    function(a, b) {
+
+                        return b[1] - a[1];
+
+                    }
+                );
+
+
+            const primeiraArea =
+                ranking[0][0];
+
+
+            const segundaArea =
+                ranking[1][0];
+
+
+            const pontos =
+                ranking[0][1];
+
+
+            const porcentagem =
+                Math.round(
+                    (pontos /
+                    perguntas.length) *
+                    100
+                );
+
+
+            const dados =
+                areas[primeiraArea];
+
+
+            document.getElementById(
+                "areaPrincipal"
+            ).textContent =
+                dados.nome;
+
+
+            document.getElementById(
+                "percentual"
+            ).textContent =
+                porcentagem +
+                "% de compatibilidade";
+
+
+            document.getElementById(
+                "descricaoPerfil"
+            ).textContent =
+                dados.descricao;
+
+
+            document.getElementById(
+                "caracteristicas"
+            ).textContent =
+                dados.caracteristicas;
+
+
+            document.getElementById(
+                "segundaArea"
+            ).textContent =
+                areas[segundaArea].nome;
+
+
+            const lista =
+                document.getElementById(
+                    "profissoes"
+                );
+
+
+            lista.innerHTML = "";
+
+
+            dados.profissoes.forEach(
+                function(profissao) {
+
+                    const item =
+                        document.createElement("li");
+
+                    item.textContent =
+                        profissao;
+
+                    lista.appendChild(item);
+
+                }
+            );
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        /* ========================= */
+        /* FINALIZAR */
+        /* ========================= */
+
+
+        function finalizarTeste() {
+
+            esconderTodas();
+
+
+            document.getElementById("final")
+                .classList.remove("escondido");
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+        /* ========================= */
+        /* VOLTAR AO INÍCIO */
+        /* ========================= */
+
+
+        function voltarInicio() {
+
+            esconderTodas();
+
+
+            document.getElementById("inicio")
+                .classList.remove("escondido");
+
+
+            window.scrollTo(0, 0);
+
+        }
+
+    </script>
+
+</body>
+
+</html>

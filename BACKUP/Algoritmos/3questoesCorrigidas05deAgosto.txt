@@ -1,0 +1,328 @@
+1.
+<script>
+let perguntas = [
+    "1. Toda forma de violência contra a mulher deixa marcas físicas visíveis. (V/F)",
+    "2. A violência psicológica também é considerada uma forma de violência contra a mulher. (V/F)",
+    "3. A violência moral pode acontecer por meio de ofensas e humilhações. (V/F)",
+    "4. O respeito entre homens e mulheres contribui para prevenir a violência. (V/F)",
+    "5. Apenas pessoas desconhecidas praticam violência contra a mulher. (V/F)",
+    "6. A Lei Maria da Penha protege mulheres em situação de violência. (V/F)",
+    "7. Xingamentos e ameaças podem ser considerados violência psicológica. (V/F)",
+    "8. Denunciar casos de violência pode ajudar a proteger a vítima. (V/F)",
+    "9. O silêncio sempre é a melhor solução para casos de violência. (V/F)",
+    "10. Promover igualdade e respeito ajuda a combater a violência contra a mulher. (V/F)"
+];
+
+let respostas = [
+    "F",
+    "V",
+    "V",
+    "V",
+    "F",
+    "V",
+    "V",
+    "V",
+    "F",
+    "V"
+];
+
+let acertos = 0;
+let resposta;
+
+for (let i = 0; i < perguntas.length; i++) {
+    resposta = prompt(perguntas[i]).toUpperCase();
+
+    if (resposta == respostas[i]) {
+        acertos++;
+    }
+}
+
+let erros = 10 - acertos;
+let aproveitamento = (acertos / 10) * 100;
+
+let classificacao = "";
+let mensagem = "";
+
+if (acertos <= 2) {
+    classificacao = "PÉSSIMO";
+    mensagem = "Você ainda conhece pouco sobre esse tema tão importante.\nAproveite as atividades da Semana Escolar, converse com seus professores e continue aprendendo. Conhecimento é um passo importante para promover respeito e combater a violência.";
+} 
+
+else if (acertos <= 4) {
+    classificacao = "REGULAR";
+    mensagem = "Você já possui alguns conhecimentos, mas ainda pode aprender muito mais.\nContinue participando das atividades propostas e amplie sua compreensão sobre os direitos das mulheres e a importância do respeito.";
+} 
+
+else if (acertos <= 6) {
+    classificacao = "MÉDIO";
+    mensagem = "Você demonstrou um conhecimento razoável sobre o tema.\nContinue estudando e participando das ações educativas para fortalecer ainda mais sua formação como cidadão consciente e respeitoso.";
+} 
+
+else if (acertos <= 8) {
+    classificacao = "BOM";
+    mensagem = "Parabéns!\nVocê demonstrou um bom conhecimento sobre a prevenção da violência contra a mulher.\nContinue compartilhando informações corretas e contribuindo para uma cultura de respeito e igualdade.";
+} 
+
+else {
+    classificacao = "ÓTIMO";
+    mensagem = "Excelente desempenho!\nVocê demonstrou um excelente conhecimento sobre o tema.\nContinue sendo um agente de conscientização, respeito e promoção dos direitos humanos dentro e fora da escola.";
+}
+
+alert(
+"RESULTADO DO QUESTIONÁRIO\n\n" +
+"Acertos: " + acertos +
+"\nErros: " + erros +
+"\nAproveitamento: " + aproveitamento + "%" +
+"\nClassificação: " + classificacao +
+"\n\n" + mensagem
+);
+</script>
+
+
+
+
+
+
+
+
+
+
+
+2.
+<script>
+let palavras = [
+    "Agressão Física",
+    "Humilhação",
+    "Ameaça",
+    "Assédio",
+    "Estupro",
+    "Perseguição",
+    "Intimidação",
+    "Chantagem",
+    "Controle Financeiro",
+    "Violência Patrimonial",
+    "Violência Moral",
+    "Violência Psicológica",
+    "Violência Sexual",
+    "Violência Física",
+    "Ofensa",
+    "Difamação",
+    "Isolamento Social",
+    "Constrangimento",
+    "Coação",
+    "Cárcere Privado",
+    "Empatia",
+    "Respeito",
+    "Solidariedade",
+    "Diálogo",
+    "Amizade",
+    "Educação",
+    "Cooperação",
+    "Gentileza",
+    "Honestidade",
+    "Liberdade",
+    "Cidadania",
+    "Igualdade",
+    "Proteção",
+    "Confiança",
+    "Acolhimento",
+    "Justiça",
+    "Paz",
+    "Escuta",
+    "Compreensão",
+    "Tolerância",
+    "Responsabilidade",
+    "Ética",
+    "Resiliência",
+    "Participação",
+    "Aprendizagem",
+    "Esperança",
+    "Respeito às Diferenças",
+    "Convivência",
+    "Colaboração",
+    "Inclusão"
+];
+
+let respostas = [
+    "S","S","S","S","S","S","S","S","S","S",
+    "S","S","S","S","S","S","S","S","S","S",
+    "N","N","N","N","N","N","N","N","N","N",
+    "N","N","N","N","N","N","N","N","N","N",
+    "N","N","N","N","N","N","N","N","N","N"
+];
+
+let acertos = 0;
+let erros = 0;
+let resposta;
+
+for (let i = 0; i < palavras.length; i++) {
+    resposta = prompt(
+        "Palavra " + (i + 1) + ": " + palavras[i] +
+        "\nEsta palavra representa uma forma de violência contra a mulher? (S/N)"
+    ).toUpperCase();
+
+    if (resposta == respostas[i]) {
+        acertos++;
+    } else {
+        erros++;
+    }
+}
+
+let aproveitamento = (acertos / 50) * 100;
+
+let classificacao = "";
+let mensagem = "";
+
+if (acertos <= 10) {
+    classificacao = "PÉSSIMO";
+    mensagem = "Você ainda conhece pouco sobre as diferentes formas de violência contra a mulher.\nNão desanime! Aproveite esta atividade para aprender mais sobre o assunto. Quanto maior o conhecimento, maior a capacidade de reconhecer situações de violência e contribuir para uma sociedade mais respeitosa e segura.";
+} 
+
+else if (acertos <= 20) {
+    classificacao = "REGULAR";
+    mensagem = "Você identificou algumas formas de violência, mas ainda há conceitos importantes para conhecer.\nContinue participando das atividades da Semana Escolar, converse com seus professores e procure informações confiáveis. Aprender é o primeiro passo para combater a violência.";
+} 
+
+else if (acertos <= 30) {
+    classificacao = "MÉDIO";
+    mensagem = "Você demonstrou um conhecimento intermediário sobre o tema.\nContinue estudando e aprofundando seus conhecimentos. Reconhecer diferentes formas de violência é essencial para promover uma cultura de respeito, igualdade e proteção aos direitos humanos.";
+} 
+
+else if (acertos <= 40) {
+    classificacao = "BOM";
+    mensagem = "Parabéns!\nVocê possui um bom conhecimento sobre as diferentes formas de violência contra a mulher.\nContinue compartilhando essas informações e incentivando atitudes de respeito, empatia e cidadania em sua comunidade.";
+}
+
+else {
+    classificacao = "ÓTIMO";
+    mensagem = "Excelente!\nVocê demonstrou excelente conhecimento sobre as formas de violência contra a mulher.\nSeu entendimento contribui para a construção de uma sociedade mais justa, igualitária e livre de violência.";
+}
+
+alert(
+"\nRESULTADO FINAL" +
+"\n\nAcertos: " + acertos +
+"\nErros: " + erros +
+"\nAproveitamento: " + aproveitamento + "%" +
+"\nClassificação: " + classificacao +
+"\n\n" + mensagem
+</script>
+);
+
+
+
+
+
+
+
+
+3.
+<script>
+let perguntas = [
+    "1. Língua Portuguesa e Literatura\n\nNa frase 'A igualdade promove o respeito entre as pessoas.', a palavra igualdade é um:\n\nA) Verbo\nB) Substantivo\nC) Adjetivo\nD) Pronome",
+
+    "2. Arte\n\nUma peça teatral sobre respeito às mulheres tem como principal objetivo:\n\nA) Apenas divertir\nB) Conscientizar o público\nC) Decorar o palco\nD) Ensinar matemática",
+
+    "3. Educação Física\n\nDurante um jogo em equipe, uma atitude correta é:\n\nA) Humilhar os colegas\nB) Desrespeitar as regras\nC) Cooperar e respeitar todos\nD) Excluir participantes",
+
+    "4. Matemática\n\nEm uma escola, 180 de 200 alunos participaram de uma palestra. Qual foi o percentual de participação?\n\nA) 80%\nB) 85%\nC) 90%\nD) 95%",
+
+    "5. Ciências da Natureza\n\nO estresse causado pela violência pode afetar:\n\nA) Apenas a visão\nB) Apenas a audição\nC) A saúde física e emocional\nD) Apenas o sono",
+
+    "6. Física\n\nCâmeras e iluminação pública ajudam a:\n\nA) Aumentar acidentes\nB) Melhorar a segurança\nC) Diminuir a gravidade\nD) Apagar a luz do dia",
+
+    "7. História\n\nA ampliação dos direitos das mulheres aconteceu graças:\n\nA) Aos movimentos sociais\nB) Apenas às guerras\nC) Ao acaso\nD) À tecnologia",
+
+    "8. Geografia\n\nUma cidade com ruas iluminadas e transporte eficiente proporciona:\n\nA) Mais insegurança\nB) Menos circulação\nC) Mais segurança\nD) Mais violência",
+
+    "9. Sociologia\n\nA violência contra a mulher deve ser enfrentada:\n\nA) Apenas pela família\nB) Pela sociedade e pelo poder público\nC) Apenas pela vítima\nD) Apenas pela polícia",
+
+    "10. Filosofia\n\nRespeitar os direitos humanos significa:\n\nA) Valorizar a dignidade das pessoas\nB) Ignorar diferenças\nC) Aceitar violência\nD) Desrespeitar opiniões",
+
+    "11. Inglês\n\nQual palavra significa 'respeito' em inglês?\n\nA) Respect\nB) School\nC) House\nD) Table",
+
+    "12. Projeto Integrador\n\nUm projeto escolar eficiente deve:\n\nA) Unir diferentes disciplinas\nB) Trabalhar apenas informática\nC) Ignorar outras áreas\nD) Ter apenas uma matéria",
+
+    "13. Fundamentos de Informática\n\nQual ferramenta pode divulgar campanhas educativas na internet?\n\nA) Sites\nB) Teclados\nC) Cabos\nD) Mouses",
+
+    "14. Lógica e Matemática\n\nQual operador representa 'OU' em JavaScript?\n\nA) &&\nB) ==\nC) ||\nD) !",
+
+    "15. Algoritmos\n\nQual estrutura é mais indicada para repetir perguntas de um quiz?\n\nA) if\nB) switch\nC) for\nD) prompt",
+
+    "16. Desenvolvimento de Sistemas Web\n\nQual linguagem é usada para estruturar uma página da web?\n\nA) CSS\nB) HTML\nC) JavaScript\nD) SQL",
+
+    "17. Hardware e Sistemas Operacionais\n\nQual dispositivo permite visualizar as perguntas do quiz?\n\nA) Impressora\nB) Monitor\nC) Mouse\nD) Caixa de som"
+];
+
+let respostas = [
+    "B",
+    "B",
+    "C",
+    "C",
+    "C",
+    "B",
+    "A",
+    "C",
+    "B",
+    "A",
+    "A",
+    "A",
+    "A",
+    "C",
+    "C",
+    "B",
+    "B"
+];
+
+let acertos = 0;
+let erros = 0;
+let resposta;
+
+for (let i = 0; i < perguntas.length; i++) {
+    resposta = prompt(perguntas[i]).toUpperCase();
+
+    if (resposta == respostas[i]) {
+        acertos++;
+    } else {
+        erros++;
+    }
+}
+
+let aproveitamento = (acertos / 17) * 100;
+
+let classificacao = "";
+let mensagem = "";
+
+if (acertos <= 4) {
+    classificacao = "PÉSSIMO";
+    mensagem = "Você ainda está iniciando seus conhecimentos sobre os conteúdos trabalhados.\nContinue estudando, participe das atividades da Semana Escolar e aproveite esta oportunidade para ampliar seus conhecimentos em todas as disciplinas. Aprender é um processo contínuo.";
+} 
+
+else if (acertos <= 8) {
+    classificacao = "REGULAR";
+    mensagem = "Você já domina alguns conceitos importantes, mas ainda há espaço para crescer.\nRevise os conteúdos estudados e continue desenvolvendo suas habilidades.";
+} 
+
+else if (acertos <= 12) {
+    classificacao = "MÉDIO";
+    mensagem = "Você demonstrou um bom progresso na integração dos conhecimentos.\nContinue aprofundando seus estudos e relacionando os conteúdos das diferentes disciplinas.";
+} 
+
+else if (acertos <= 16) {
+    classificacao = "BOM";
+    mensagem = "Parabéns!\nVocê apresentou um bom domínio dos conteúdos e conseguiu integrar conhecimentos de diferentes áreas.\nContinue desenvolvendo sua curiosidade e utilizando a tecnologia de forma responsável.";
+} 
+
+else {
+    classificacao = "ÓTIMO";
+    mensagem = "Excelente!\nVocê demonstrou excelente compreensão dos conteúdos e da relação entre as diferentes disciplinas.\nContinue compartilhando seus conhecimentos e promovendo soluções inovadoras e responsáveis.";
+}
+
+alert(
+"RESULTADO\n\n" +
+"Acertos: " + acertos +
+"\nErros: " + erros +
+"\nAproveitamento: " + aproveitamento.toFixed(2) + "%" +
+"\n\nClassificação: " + classificacao +
+"\n\n" + mensagem
+);
+</script>

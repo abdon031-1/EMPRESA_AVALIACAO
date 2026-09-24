@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz - Algoritmos</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            margin: 0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #ccc;
+        }
+
+        h1 {
+            text-align: center;
+            color: #222;
+        }
+
+        .subtitulo {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+        }
+
+        .questao {
+            margin-bottom: 25px;
+        }
+
+        .questao h2 {
+            font-size: 18px;
+        }
+
+        .opcao {
+            display: block;
+            padding: 12px;
+            margin: 8px 0;
+            background: #eee;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .opcao:hover {
+            background: #ddd;
+        }
+
+        button {
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 8px;
+            background: #222;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background: #444;
+        }
+
+        #resultado {
+            margin-top: 25px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Quiz de Algoritmos</h1>
+
+    <p class="subtitulo">
+        Teste seus conhecimentos sobre lógica e algoritmos!
+    </p>
+
+    <form id="quiz">
+
+        <div class="questao">
+            <h2>1. O que é um algoritmo?</h2>
+
+            <label class="opcao">
+                <input type="radio" name="q1" value="a">
+                Um conjunto de passos para resolver um problema
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q1" value="b">
+                Um computador
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q1" value="c">
+                Uma peça de hardware
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q1" value="d">
+                Um sistema operacional
+            </label>
+        </div>
+
+
+        <div class="questao">
+            <h2>2. Qual linguagem pode ser usada para programar algoritmos?</h2>
+
+            <label class="opcao">
+                <input type="radio" name="q2" value="a">
+                JavaScript
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q2" value="b">
+                HTML
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q2" value="c">
+                CSS
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q2" value="d">
+                Nenhuma delas
+            </label>
+        </div>
+
+
+        <div class="questao">
+            <h2>3. Para que serve uma estrutura condicional?</h2>
+
+            <label class="opcao">
+                <input type="radio" name="q3" value="a">
+                Repetir comandos
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q3" value="b">
+                Tomar decisões
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q3" value="c">
+                Criar arquivos
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q3" value="d">
+                Desligar o computador
+            </label>
+        </div>
+
+
+        <div class="questao">
+            <h2>4. Qual comando pode ser usado para repetir uma instrução em JavaScript?</h2>
+
+            <label class="opcao">
+                <input type="radio" name="q4" value="a">
+                if
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q4" value="b">
+                const
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q4" value="c">
+                for
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q4" value="d">
+                let
+            </label>
+        </div>
+
+
+        <div class="questao">
+            <h2>5. Qual profissão trabalha diretamente com programação?</h2>
+
+            <label class="opcao">
+                <input type="radio" name="q5" value="a">
+                Desenvolvedor de software
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q5" value="b">
+                Motorista
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q5" value="c">
+                Garçom
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q5" value="d">
+                Atleta
+            </label>
+        </div>
+
+
+        <div class="questao">
+            <h2>6. Qual é um exemplo de algoritmo no cotidiano?</h2>
+
+            <label class="opcao">
+                <input type="radio" name="q6" value="a">
+                Uma receita de bolo
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q6" value="b">
+                Uma fotografia
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q6" value="c">
+                Uma música
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q6" value="d">
+                Uma parede
+            </label>
+        </div>
+
+
+        <div class="questao">
+            <h2>7. O que é uma variável?</h2>
+
+            <label class="opcao">
+                <input type="radio" name="q7" value="a">
+                Um tipo de monitor
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q7" value="b">
+                Um local usado para armazenar um valor
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q7" value="c">
+                Um teclado
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q7" value="d">
+                Um navegador
+            </label>
+        </div>
+
+
+        <div class="questao">
+            <h2>8. Por que algoritmos são importantes?</h2>
+
+            <label class="opcao">
+                <input type="radio" name="q8" value="a">
+                Porque ajudam a organizar a solução de problemas
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q8" value="b">
+                Porque substituem o computador
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q8" value="c">
+                Porque servem apenas para jogos
+            </label>
+
+            <label class="opcao">
+                <input type="radio" name="q8" value="d">
+                Porque eliminam a programação
+            </label>
+        </div>
+
+
+        <button type="button" onclick="verificarQuiz()">
+            FINALIZAR QUIZ
+        </button>
+
+    </form>
+
+    <div id="resultado"></div>
+
+</div>
+
+
+<script>
+function verificarQuiz() {
+
+    let respostasCorretas = [
+        "a",
+        "a",
+        "b",
+        "c",
+        "a",
+        "a",
+        "b",
+        "a"
+    ];
+
+    let pontos = 0;
+
+    for (let i = 1; i <= 8; i++) {
+
+        let resposta = document.querySelector(
+            'input[name="q' + i + '"]:checked'
+        );
+
+        if (resposta !== null) {
+
+            if (resposta.value === respostasCorretas[i - 1]) {
+                pontos++;
+            }
+
+        }
+    }
+
+    let porcentagem = (pontos / 8) * 100;
+
+    let mensagem = "";
+
+    if (pontos === 8) {
+        mensagem = "Excelente! Você acertou tudo!";
+    }
+    else if (pontos >= 6) {
+        mensagem = "Muito bom! Você entende bem de algoritmos.";
+    }
+    else if (pontos >= 4) {
+        mensagem = "Bom trabalho! Você já possui uma boa base.";
+    }
+    else {
+        mensagem = "Continue estudando! Algoritmos é uma ótima área para aprender programação.";
+    }
+
+    document.getElementById("resultado").innerHTML =
+        "Você acertou " + pontos + " de 8 questões.<br>" +
+        "Pontuação: " + porcentagem + "%<br><br>" +
+        mensagem;
+}
+</script>
+
+</body>
+</html>

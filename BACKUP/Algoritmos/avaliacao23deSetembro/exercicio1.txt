@@ -1,0 +1,76 @@
+1.
+
+<script>
+// 1. Desenvolva um programa em JavaScript que leia 4 notas bimestrais, calcule e mostre a sua média aritmética bem com a sua situação final utilizando, no mínimo, 2 funções, 1 laço de repetição e 1 lógica de decisão na codificação do programa para a resolução deste problema: Se Média final >= 6, a situação final é “Aluno(a) aprovado(a)” Se Média final < 6, a situação final é “Aluno(a) reprovado(a)”
+
+// ------------------------------------------------------
+// função 1: lerNotas
+// vai perguntar ao usuário as 4 notas, validar se cada nota está entre 0 e 10, e guarda no array;
+// ------------------------------------------------------
+function lerNotas() {
+    let notas = []; // array que vai guardar as 4 notas;
+
+    // laço de repetição (for): repete para cada bimestre;
+    for (let i = 1; i <= 4; i++) {
+        let nota = parseFloat(prompt("Digite a nota do " + i + "º bimestre: "));
+
+        // laço de repetição (while): continua pedindo a nota enquanto o valor for inválido (não for número ou não for de 0 a 10);
+        while (isNaN(nota) || nota < 0 || nota > 10) {
+            nota = parseFloat(prompt("Valor inválido! Digite novamente a nota do " + i + "º bimestre (0 a 10): "));
+        }
+
+        // coloca a nota validada no final do array:
+        notas.push(nota);
+    }
+
+    // retorna o array completo com as 4 notas;
+    return notas;
+}
+
+// ------------------------------------------------------
+// função 2: calcularMedia
+// vai somar todas as notas e fazer a média aritmética delas;
+// ------------------------------------------------------
+function calcularMedia(notas) {
+    let soma = 0; // acumulador da soma das notas;
+
+    // laço de repetição: passsa todas as notas do array;
+    for (let i = 0; i < notas.length; i++) {
+		        soma += notas[i]; // vai somando cada nota ao total;
+    }
+
+    // razão da soma total pela quantidade de notas (média aritmética);
+    return soma / notas.length;
+}
+
+// ------------------------------------------------------
+// função 3: situacaoFinal
+// vai decidir com base na média se o aluno foi aprovado ou reprovado;
+// ------------------------------------------------------
+function situacaoFinal(media) {
+    // compara a média com o valor 6;
+    if (media >= 6) {
+        return "Aluno(a) aprovado(a)"; // média suficiente para aprovar;
+    } else {
+        return "Aluno(a) reprovado(a)"; // média insuficiente;
+    }
+}
+
+// ============================================
+// parte principal
+// ============================================
+
+// 1º passo: chama a função que lê as 4 notas;
+let notas = lerNotas();
+
+// 2º passo: chama a função que calcula a média das notas;
+let media = calcularMedia(notas);
+
+// 3º passo: chama a função que define a situação final;
+let situacao = situacaoFinal(media);
+
+// 4º passo: mostra os resultados;
+alert("Notas digitadas: " + notas);
+alert("Média final: " + media.toFixed(1));
+alert("Situação final: " + situacao);
+</script>

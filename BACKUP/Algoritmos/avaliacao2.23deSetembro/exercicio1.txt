@@ -1,0 +1,154 @@
+<script>
+// valor da meta de vendas de cada vendedor;
+// usado depois para comparar com cada venda individual;
+const META = 5000;
+
+// array que vai guardar o valor de venda de cada vendedor;
+// Cada posição do array representa um vendedor diferente;
+const vendas = [];
+
+// ---------------------------------------------------
+// função: inserirVendas
+// vai perguntar ao usuário quantos vendedores existem e coletar o valor de venda de cada um, e guardando no array "vendas";
+// ---------------------------------------------------
+function inserirVendas() {
+  let quantidade = parseInt(prompt('Quantos vendedores?'));
+
+  // while: repete enquanto o valor digitado nao for um numero valido ou for menor/igual a 0;
+  while (isNaN(quantidade) || quantidade <= 0) {
+    quantidade = parseInt(prompt('Valor invalido! Quantos vendedores?'));
+  }
+
+  // laço de repetição "for": vai rodar uma vez para cada vendedor;
+  // começa em i = 1 e vai até i = quantidade;
+  for (let i = 1; i <= quantidade; i++) {
+    // pergunta o valor de venda do vendedor "i";
+    let valor = parseFloat(prompt('Valor de venda do vendedor ' + i + ': R$'));
+
+    // while: repete enquanto o valor digitado nao for um numero valido ou for negativo;
+    while (isNaN(valor) || valor < 0) {
+      valor = parseFloat(prompt('Valor invalido! Valor de venda do vendedor ' + i + ': R$'));
+    }
+
+    // adiciona o valor digitado no final do array;
+    vendas.push(valor);
+  }
+}
+
+// ---------------------------------------------------
+// função: calcularMedia
+// recebe uma lista de números e devolve a média;
+// ---------------------------------------------------
+function calcularMedia(lista) {
+  let soma = 0; // variável que vai acumular a soma de todos os valores;
+
+  // passa cada posição do array, somando os valores um a um;
+  for (let i = 0; i < lista.length; i++) {
+    soma += lista[i]; // soma = soma + lista[i]
+  }
+  return soma / lista.length;
+}
+
+// ---------------------------------------------------
+// função: encontrarMaiorValor
+// recebe uma lista de números e devolve o maior valor encontrado;
+// ---------------------------------------------------
+function encontrarMaiorValor(lista) {
+  // começa assumindo que o maior valor é o primeiro item da lista.
+  let maior = lista[0];
+
+  // começa o laço a partir do índice 1, já que o índice 0 já foi usado como valor inicial de "maior";
+  for (let i = 1; i < lista.length; i++) {
+    
+    // lógica de decisão: se o valor atual for maior que o maior valor encontrado até agora, atualiza a variável "maior".
+    if (lista[i] > maior) {
+      maior = lista[i];
+    }
+  }
+  return maior;
+}
+
+// ---------------------------------------------------
+// função: contarQueAtingiramMeta
+// Recebe uma lista de vendas e a meta, e conta quantos vendedores
+// tiveram venda igual ou maior que a meta.
+// ---------------------------------------------------
+function contarQueAtingiramMeta(lista, meta) {
+  let contador = 0; // vai guardar quantos vendedores bateram a meta
+
+  for (let i = 0; i < lista.length; i++) {
+    // Lógica de decisão: verifica se a venda do vendedor "i"
+    // é maior ou igual à meta estabelecida.
+    if (lista[i] >= meta) {
+      contador++; // contador = contador + 1
+    }
+  }
+
+  return contador;
+}
+
+// ---------------------------------------------------
+// função: classificarDesempenho
+// recebe o valor de venda de UM vendedor e a média geral, e devolve um texto classificando o desempenh;
+// ---------------------------------------------------
+function classificarDesempenho(valor, media) {
+  // se o vendedor vendeu 20% a mais que a média (ou mais), é "Excelente";
+  if (valor >= media * 1.2) {
+    return 'Excelente';
+
+  // se vendeu igual ou acima da média (mas não chegou a 20% acima), é "Bom";
+  } else if (valor >= media) {
+    return 'Bom';
+    
+  // se vendeu pelo menos 70% da média, é considerado "Regular";
+  } else if (valor >= media * 0.7) {
+    return 'Regular';
+
+  // caso não se encaixe em nenhuma acima, está "Abaixo do esperado";
+  } else {
+    return 'Abaixo do esperado';
+  }
+}
+
+// ---------------------------------------------------
+// função: main
+// função "principal", que organiza a ordem de execução do programa;
+// ---------------------------------------------------
+function main() {
+  // 1. coleta os dados dos vendedores;
+  inserirVendas();
+
+  // 2. calcula a média de vendas de todos;
+  const media = calcularMedia(vendas);
+
+  // 3. descobre qual foi o maior valor de venda;
+  const maior = encontrarMaiorValor(vendas);
+
+  // 4. conta quantos vendedores atingiram a meta;
+  const totalMeta = contarQueAtingiramMeta(vendas, META);
+
+  // 5. mostra o relatório geral;
+  alert("Relatório de Desempenho");
+  alert('Media de vendas: R$ ' + media.toFixed(2));
+  alert('Maior valor de venda: R$ ' + maior.toFixed(2));
+  alert('Vendedores que atingiram a meta (R$ ' + META + '): ' + totalMeta);
+
+  // 6. mostra a classificação individual;
+  alert("Classificação Individual");
+
+  // passa pelo array "vendas" para exibir o resultado de cada vendedor;
+  for (let i = 0; i < vendas.length; i++) {
+    
+    // chama a função de classificação para o vendedor da posição "i";
+    const classificacao = classificarDesempenho(vendas[i], media);
+
+    // exibe o número do vendedor (i + 1, porque o array começa em 0), o valor vendido e a classificação obtida;
+    alert('Vendedor ' + (i + 1) + ': R$ ' + vendas[i].toFixed(2) + ' -> ' + classificacao);
+  }
+}
+
+// ---------------------------------------------------
+// chamada da função principal, linha que inicia a execução do programa;
+// ---------------------------------------------------
+main();
+</script>
